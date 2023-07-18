@@ -1,5 +1,7 @@
 package curriculum_A;
 
+import java.math.BigDecimal;
+
 public class Qes1_13 {
 
 	public static void main(String[] args) {
@@ -25,7 +27,7 @@ public class Qes1_13 {
 		num5 = 0.0f;
 		num6 = 0.0d;
 		text1 = '\u0000';
-		text2 = "null";
+		text2 = null;
 		data = false;
 		
 /*3 初期化した変数に値を代入*/
@@ -73,7 +75,8 @@ public class Qes1_13 {
 
 /*7 BMIの出力*/
 		double bmi = weight / (height /100 * height /100);
-		System.out.println("BMIは" + (Math.ceil(bmi * 10) / 10) + "です");
+		BigDecimal newbmi1 = new BigDecimal(String.valueOf(bmi));
+		System.out.println("BMIは" + newbmi1.setScale(1,BigDecimal.ROUND_DOWN) + "です");
 
 /*8 6で宣言した変数に再代入し、コンソール表示*/
 //		変数の再代入
@@ -85,7 +88,8 @@ public class Qes1_13 {
 	    
 //	    BMIの計算
 	    bmi = weight / (height /100 * height /100);
-	    bmi = Math.ceil(bmi);
+	    BigDecimal newbmi2 = new BigDecimal(String.valueOf(bmi));
+	    
 	    
 	    System.out.println("--------------------------------------------");
 	     
@@ -95,7 +99,8 @@ public class Qes1_13 {
 		System.out.println("身長は" + height + "cmです");
 		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + likeFood + "です");
-		System.out.println("BMIは" + (Math.ceil(bmi * 10) / 10) + "です");
+//		System.out.println("BMIは" + (Math.ceil(bmi * 10) / 10) + "です");
+		System.out.println("BMIは" + newbmi2.setScale(1,BigDecimal.ROUND_DOWN) + "です");
 
 		System.out.println("--------------------------------------------");
 		
@@ -107,6 +112,8 @@ public class Qes1_13 {
 		
 //		BMIの計算	
 		bmi = weight / (height /100 * height /100);
+		BigDecimal newbmi3 = new BigDecimal(String.valueOf(bmi));
+		
 		
 //		コンソール出力
 		 System.out.println("始めまして" + name + "です");
@@ -114,7 +121,7 @@ public class Qes1_13 {
 		 System.out.println("身長は" + height + "cmです");
 		 System.out.println("体重は" + weight + "kgです");
 		 System.out.println("好きな食べ物は" + likeFood + "です");
-		 System.out.println("BMIは" + (Math.ceil(bmi * 10) / 10) + "です");
+		 System.out.println("BMIは" +  newbmi3.setScale(2,BigDecimal.ROUND_UP) + "です");
 
 	     System.out.println("--------------------------------------------");
 			
