@@ -1,8 +1,10 @@
 package curriculum_A;
 
 import java.math.BigDecimal;
+import java.math.RoundingMode;
 
 public class Qes1_13 {
+
 
 	public static void main(String[] args) {
 //		 TODO 自動生成されたメソッド・スタブ
@@ -76,7 +78,7 @@ public class Qes1_13 {
 /*7 BMIの出力*/
 		double bmi = weight / (height /100 * height /100);
 		BigDecimal newbmi1 = new BigDecimal(String.valueOf(bmi));
-		System.out.println("BMIは" + newbmi1.setScale(1,BigDecimal.ROUND_DOWN) + "です");
+		System.out.println("BMIは" + newbmi1.setScale(1,RoundingMode.HALF_DOWN) + "です");
 
 /*8 6で宣言した変数に再代入し、コンソール表示*/
 //		変数の再代入
@@ -99,8 +101,7 @@ public class Qes1_13 {
 		System.out.println("身長は" + height + "cmです");
 		System.out.println("体重は" + weight + "kgです");
 		System.out.println("好きな食べ物は" + likeFood + "です");
-//		System.out.println("BMIは" + (Math.ceil(bmi * 10) / 10) + "です");
-		System.out.println("BMIは" + newbmi2.setScale(1,BigDecimal.ROUND_DOWN) + "です");
+		System.out.println("BMIは" + newbmi2.setScale(1,RoundingMode.HALF_DOWN) + "です");
 
 		System.out.println("--------------------------------------------");
 		
@@ -108,7 +109,7 @@ public class Qes1_13 {
 //		6で使用した変数を和算する
 		age += age;
 		height += height;
-		weight += weight;
+		weight += weight; 
 		
 //		BMIの計算	
 		bmi = weight / (height /100 * height /100);
@@ -121,11 +122,15 @@ public class Qes1_13 {
 		 System.out.println("身長は" + height + "cmです");
 		 System.out.println("体重は" + weight + "kgです");
 		 System.out.println("好きな食べ物は" + likeFood + "です");
-		 System.out.println("BMIは" +  newbmi3.setScale(2,BigDecimal.ROUND_UP) + "です");
+		 System.out.println("BMIは" +  newbmi3.setScale(2,RoundingMode.HALF_DOWN) + "です");
 
 	     System.out.println("--------------------------------------------");
 			
 /*10 年齢が25以上ならtrueを出力*/
+//	     変数に再代入
+	     age = 24;
+         height = 168.5;
+		 weight = 64.2;
 	     boolean overAge = age >= 25;
 	     
 //	     コンソールで出力
