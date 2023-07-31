@@ -4,9 +4,10 @@ import java.time.LocalDateTime;
 import java.time.format.DateTimeFormatter;
 
 public class Info_food {
-	String country;
-	String food;
-	String kindOf;
+	//インスタンス変数の作成	
+	public String country;
+	public String food;
+	public String kindOf;
 	
 	public Info_food(String country , String food , 
 					 String kindOf) 
