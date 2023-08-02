@@ -6,7 +6,7 @@ public class AnimalBean {
 	private double height;
 	private int speed;
 
-	// コンストラクタ生成かつインスタンス変数宣言
+	// コンストラクタ生成
 	AnimalBean(String name, double height, int speed) {
 		this.name = name;
 		this.height = height;
@@ -16,7 +16,7 @@ public class AnimalBean {
 	// 戻り値で値を返す
 	public String getName() {
 		// NUllの場合プログラム強制終了
-		if (name == "") {
+		if (this.name == "") {
 			System.out.println("値が正しく設定されていません");
 			System.exit(0);
 		}
@@ -31,7 +31,7 @@ public class AnimalBean {
 	// 戻り値で値を返す
 	public double getHeight() {
 		// 値が0の場合プログラム強制終了
-		if (height == 0) {
+		if (this.height == 0) {
 			System.out.println("値が正しく設定されていません");
 			System.exit(0);
 		}
@@ -46,7 +46,7 @@ public class AnimalBean {
 	// 戻り値で値を返す
 	public int getSpeed() {
 		// 値が0の場合プログラム強制終了
-		if (speed == 0) {
+		if (this.speed == 0) {
 			System.out.println("値が正しく設定されていません");
 			System.exit(0);
 		}
