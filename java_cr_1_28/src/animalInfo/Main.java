@@ -1,7 +1,5 @@
 package animalInfo;
 
-import java.util.Scanner;
-
 public class Main {
 	/*
 	 * 
@@ -25,44 +23,24 @@ public class Main {
 	 * 
 	 */
 	public static void main(String[] args) {
-		// 変数を宣言
-		String input = null;
-		String name = null;
-		double height = 0;
-		int speed = 0;
-		String scientificName = null;
-		// 配列を作成
-		String[] dataBox;
-		// Scannerを起動
-		Scanner sc = new Scanner(System.in);
-		do {
-			System.out.println("コンソールに文字を入力してください");
-			input = sc.nextLine();
-			// 入力値を[,]で区切り、配列に格納する
-			dataBox = input.split(",");
-			// データがnullだった場合処理を繰り返す
-		} while (input.isEmpty());
-		sc.close();
-		// 配列を1つずつ取り出し、配列の数ループする
+		// InputScannerにアクセスし、配列を返すメソッド
+		String[] dataBox = InputScanner.InputData();
 		for (String data : dataBox) {
 			// データをさらに[:]で区切り、新たに配列に格納する
 			String[] animalInfo = data.split(":");
 			// 配列の値をそれぞれの変数に格納
-			name = animalInfo[0];
-			height = Double.parseDouble(animalInfo[1]);
-			speed = Integer.parseInt(animalInfo[2]);
+			String name = animalInfo[0];
+			// String型をdouble型に変換する
+			double height = Double.parseDouble(animalInfo[1]);
+			// String型をint型に変換する
+			int speed = Integer.parseInt(animalInfo[2]);
 			// インスタンス変数生成
-			Animal animal = new Animal(name, height, speed);
-			// 学名を取得するメソッドの定義
-			scientificName = animal.getscientific();
-			// nullのチェック
-			animal.nullCheck(scientificName);
-			// 動物の情報を表示するメソッドの定義
-			String info  = animal.animalInfo(scientificName);
-			System.out.println(info);
-			
+			AnimalBean animal = new AnimalBean(name, height, speed);
+			// Dataクラスにアクセスし、switch文で学名を取得するメソッド
+			String scientific = Data.getScientific(animal);
+			// アニマルの情報表示
+			animal.animalInfo(scientific);
 		}
-
 	}
 
 }
