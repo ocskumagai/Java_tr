@@ -42,17 +42,21 @@ public class Animal {
 	}
 
 	// 動物の情報を表示するメソッド
-	public static void animalInfo(Animal animal, String scientificName) {
-		System.out.println("動物名:" + animal.getName());
-		System.out.println("体長:" + animal.getHeight() + "m");
-		System.out.println("速度:" + animal.getSpeed() + "km/h");
-		System.out.println("学名:" + scientificName);
-		System.out.println();
+//	public static void animalInfo(Animal animal, String scientificName) {
+//		System.out.println("動物名:" + animal.getName());
+//		System.out.println("体長:" + animal.getHeight() + "m");
+//		System.out.println("速度:" + animal.getSpeed() + "km/h");
+//		System.out.println("学名:" + scientificName);
+//		System.out.println();
+//	}
+	public String animalInfo(String scientificName) {
+		return "動物名:" + this.getName() + "\n体長:" + this.getHeight() +"m"
+		+ "\n速度:" + this.getSpeed() + "km/h" + "\n学名:" + scientificName + "\n";
 	}
 
 	// nullをチェックするメソッド
-	public static void nullCheck(Animal animal, String scientificName) {
-		String name = animal.getName();
+	public void nullCheck(String scientificName) {
+		String name = this.getName();
 
 		if (name.isEmpty() || scientificName.isEmpty()) {
 			System.out.println("値が正しく設定されていません");
@@ -62,11 +66,11 @@ public class Animal {
 	}
 
 	// 学名を取得するメソッド
-	public static String getscientific(Animal animal) {
+	public String getscientific() {
 		// インスタンスで名前を取得
-		String scientificName = animal.getName();
+		String scientificName;
 		// 名前と一致した場合その動物の学名を取得する
-		switch (animal.getName()) {
+		switch (this.getName()) {
 		case "ライオン":
 			scientificName = "パンテラ　レオ";
 			break;

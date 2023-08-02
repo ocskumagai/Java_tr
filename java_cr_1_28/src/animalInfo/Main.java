@@ -54,11 +54,13 @@ public class Main {
 			// インスタンス変数生成
 			Animal animal = new Animal(name, height, speed);
 			// 学名を取得するメソッドの定義
-			scientificName = Animal.getscientific(animal);
+			scientificName = animal.getscientific();
 			// nullのチェック
-			Animal.nullCheck(animal, scientificName);
+			animal.nullCheck(scientificName);
 			// 動物の情報を表示するメソッドの定義
-			Animal.animalInfo(animal, scientificName);
+			String info  = animal.animalInfo(scientificName);
+			System.out.println(info);
+			
 		}
 
 	}
