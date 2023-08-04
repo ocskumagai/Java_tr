@@ -45,7 +45,8 @@ public class Main {
 		}
 
 	}
-	//	情報を表示する
+
+	// 情報を表示する
 	public static void prefectureInfo(PrefectureBean prefecture) {
 		String cityInfo = "都道府県:" + prefecture.getPrefectureName() + "\n県庁所在地:" + prefecture.getMainCity() + "\n面積:"
 				+ (String.format("%.1f", prefecture.getArea())) + "km2" + "\n";
