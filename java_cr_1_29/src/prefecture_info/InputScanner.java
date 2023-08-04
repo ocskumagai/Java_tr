@@ -38,8 +38,8 @@ public class InputScanner {
 			// 昇順に並び替える
 			Arrays.sort(changedIdBox);
 		} else if (value == 1) {
-			Arrays.sort(changedIdBox, Collections.reverseOrder());
 			// 降順に並び替える
+			Arrays.sort(changedIdBox, Collections.reverseOrder());
 		} else {
 
 		}
