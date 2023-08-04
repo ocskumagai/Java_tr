@@ -27,9 +27,9 @@ public class Main {
 		 */
 
 		// スキャナークラスのメソッドを呼び配列を返すかつ変数に受け取った配列を格納する
-		String[] idBox = InputScanner.InputData();
+		Integer[] idBox = InputScanner.InputData();
 		// 拡張for文で配列を1つずつ取り出す
-		for (String id : idBox) {
+		for (Integer id : idBox) {
 			// データクラスのデータを取得するメソッドを呼び、変数に格納する
 			String cityData = PrefectureData.getCityData(id);
 			// データを「:」で区切り、さらに配列に格納する
@@ -43,7 +43,6 @@ public class Main {
 			// 生成したインスタンスで情報を表示するメソッドにアクセスする
 			prefectureInfo(prefecture);
 		}
-
 	}
 
 	// 情報を表示する
