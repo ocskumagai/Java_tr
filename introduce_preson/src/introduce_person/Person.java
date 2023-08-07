@@ -27,8 +27,7 @@ public class Person {
 
 	// 情報を表示する
 	public void print(double bmi) {
-		String info = "\n名前は" + this.name + "です" + "\n年は" + this.age + "です" + "\nBMIは" + String.format("%.2f", bmi)
-				+ "です";
+		String info = "\n名前は" + this.name + "です" + "\n年は" + this.age + "です" + "\nBMIは" + Math.floor(bmi) + "です";
 		System.out.println(info);
 	}
 
